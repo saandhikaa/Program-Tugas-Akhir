@@ -39,7 +39,6 @@ const int Potentio_0  = A0,           // stepper
 const int IRSensorPin  = 8;
 #define Box digitalRead(IRSensorPin)
 
-////////////////////////////////////////////////////////////////////////////////////////////
 
 const int StepperADC[41] = {142,156,173,189,206,224,
                                 240,257,273,291,308,
@@ -80,8 +79,6 @@ void setup() {
   lcd.backlight();
   lcd.clear();
   lcd.print("i'm Ready");
-
-  //Recording();
 }
 
 void loop() {
@@ -89,6 +86,7 @@ void loop() {
     int byteIn = Serial.read();
     switch(byteIn){
       
+      // Connect Button - Clicked
       case '1':
         lcd.clear(); lcd.print("Connected"); delay(1000);
         lcd.clear();
@@ -114,7 +112,6 @@ void loop() {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////
 
 
 int ADCPosition(int nPot){

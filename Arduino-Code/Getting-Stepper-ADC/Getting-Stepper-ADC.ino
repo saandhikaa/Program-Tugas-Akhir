@@ -13,89 +13,54 @@ const int AnalogPin = A0;
 #define Stepper_on        digitalWrite(enable, LOW);
 #define Stepper_off       digitalWrite(enable, HIGH);
 
-const long revolution = 200*32;
-
-const int Mydelay[2] = {100, 1000};
+const long revolution = 200*32;           // Microstep resolusi
+const int  Mydelay[2] = {100, 1000};      // Delay for every step
 
 int last_angle = 0,
-    MiddleBase = 502,
-    adcvalue;
+    MiddleBase = 502;
 
 //////////////////////////////////////////////////////////////////
 
 void setup() {
   lcd.begin();
   lcd.backlight();
-  lcd.clear(); lcd.print("i'm Ready");
+  lcd.clear();
+  lcd.print("i'm Ready");
+  
+  Serial.begin(9600);
+  Serial.println("\n Getting initial data for stepper motor");
   
   pinMode(AnalogPin, INPUT);
   pinMode(stepPin,  OUTPUT);
   pinMode(dirPin,   OUTPUT);
   pinMode(enable,   OUTPUT);
-  Stepper_off;
-  
-  delay(5000);
-  Serial.begin(9600);
-  Serial.println("\nSTART...");
-  
-  //gotozero();
-  last_angle = 180;
-  Stepper_on;
-  delay(1000);
-  
-  Getdata2();
-  Stepper_off;
 
+  Stepper_on;
+  gotomid();
+  Getdata();
+  
+  Stepper_off;
 }
 
 void loop() {
-  //int sa = map(analogRead(AnalogPin),134,870,0,360);
-  int sa = analogRead(AnalogPin);
-  
-  lcd.clear();
-  lcd.print(sa);
-  delay(500);
+  LCDShow();
 }
 
 
 void Getdata(){
-  int data[3][41];
-
-  Serial.println("Ready..." + String(analogRead(AnalogPin)));
-  delay(2000);
-
-  for (int s = 0; s < 3; s++){
-    Serial.println("\n Percobaan " + String(s+1));
-    delay(1000);
-    Angle(0);
-    delay(1000);
-    
-    for (int a = 0; a <= 40; a++){
-      Angle(a*9);
-      //delay(500);
-      adcvalue = analogRead(AnalogPin);
-      Serial.println(String(a*9) + ", " + String(adcvalue));
-      data[s][a] = adcvalue;
-      //delay(500);
-    }
-  }
-
-  Serial.println("\nSudut, ADC 1, ADC 2, ADC 3");
-  for (int s = 0; s <= 40; s++){
-    Serial.print(String(s*9) + ", ");
-    Serial.print(String(data[0][s]) + ", ");
-    Serial.print(String(data[1][s]) + ", ");
-    Serial.println(data[2][s]);
+  int adcvalue;
+  
+  Serial.print("Sudut");
+  for (int s = 0; s < 20; s++){
+    Serial.print(", Uji " + String(s+1));
   }
   
-}
-
-void Getdata2(){
   for (int s = 0; s <= 40; s++){
     Angle(s*9);
     delay(1000);
     Stepper_off;
     Serial.print("\n" + String(s*9));
+    
     for (int a = 0; a < 20; a++){
       lcd.clear();
       adcvalue = analogRead(AnalogPin);
@@ -109,6 +74,13 @@ void Getdata2(){
   }
 }
 
+void LCDShow(){
+  int sa = analogRead(AnalogPin);
+  
+  lcd.clear();
+  lcd.print(sa);
+  delay(500);
+}
 
 void Angle(int value){
   if (value > last_angle) Stepper_turn_CW;
@@ -121,14 +93,12 @@ void Angle(int value){
   last_angle = value;
 }
 
-
 void Steps_run(){
   digitalWrite(stepPin, HIGH);  delayMicroseconds(Mydelay[1]);
   digitalWrite(stepPin, LOW);   delayMicroseconds(Mydelay[0]);
 }
 
-
-void gotozero(){
+void gotomid(){
   if (analogRead(AnalogPin) > MiddleBase)
     Stepper_turn_CCW;
   else if (analogRead(AnalogPin) < MiddleBase)

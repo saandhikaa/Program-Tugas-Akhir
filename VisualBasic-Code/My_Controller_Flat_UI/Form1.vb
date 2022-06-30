@@ -1,7 +1,7 @@
 ﻿Imports System
 Imports System.IO.Ports
 
-Public Class Form1
+Public Class Form
     Dim Port As String = " "                                'nama port
     Dim ConnectedString As String
     Dim DataString As String                                'tampilan text pada tombol data1 - data10               
@@ -28,7 +28,7 @@ Public Class Form1
     Dim DataArrangeS As Integer = 200
 
     Dim Arm1 As Integer = 135                               'panjang lengan 1
-    Dim Arm2 As Integer = 148                               'panjang lengan 2
+    Dim Arm2 As Integer = 147                               'panjang lengan 2
     Dim Arm3 As Integer = 67                                'panjang lengan 3 (distance to end effector)
     Dim Arm4 As Integer = 36                                'tinggi end effector
     Dim BaseH As Integer = 99                               'jarak lantai ke titik alpha
@@ -122,6 +122,7 @@ Public Class Form1
                 MyPort.WriteLine("1")                   'send info: connected
                 MyPort.Close()
 
+                SideConnect.Font = New Font(SideConnect.Font.FontFamily, 12.5, FontStyle.Bold)
                 ScreenLayout("Main")
 
             Else
@@ -131,6 +132,7 @@ Public Class Form1
 
         ElseIf SideConnect.Text = ConnectedString Then      'back to home screen_______________________
             SideConnect.Text = "Disconnect"
+            SideConnect.Font = New Font(SideConnect.Font.FontFamily, 12, FontStyle.Regular)
             If SideRecord.BaseColor = Color.White Then
                 MyPort.Open()
                 MyPort.WriteLine("4")  '''' get out from recording() loop arduino
@@ -352,6 +354,9 @@ Public Class Form1
     End Sub
 
     Private Sub InputConvert_Click(sender As Object, e As EventArgs) Handles InputConvert.Click
+        If PlaySend.Text = "Play" Then
+            PlaySend.Text = "Send to Arduino"
+        End If
 
         If InputX.Text <> "" And InputY.Text <> "" And InputZ.Text <> "" Then
             Xposition = Convert.ToDouble(InputX.Text)
@@ -390,8 +395,12 @@ Public Class Form1
                 InputZ.Clear()
                 InputGripper.Clear()
 
-                DataLogging.Text += Environment.NewLine & "X:" & Xposition & "  Y:" & Yposition & "  Z:" & Zposition
-                DataLogging.Text += Environment.NewLine & "Gripper: " & grips & Environment.NewLine
+                DataLogging.Text += Environment.NewLine & "Position : " & Xposition & ", " & Yposition & ", " & Zposition
+                DataLogging.Text += "  |  " & grips & Environment.NewLine
+                DataLogging.Text += "Joint    : " & DataIn(1) & ", " & DataIn(2) & ", " & DataIn(3) & Environment.NewLine
+
+                DataLogging.SelectionStart = DataLogging.Text.Length
+                DataLogging.ScrollToCaret()
 
                 InputNotif.Visible = False
                 InputGripper.Visible = False
@@ -560,6 +569,9 @@ Public Class Form1
                 DataLogging.Text += " Stack      : " & StackD & Environment.NewLine & Environment.NewLine
                 DataLogging.Text += Environment.NewLine & Environment.NewLine & "Angular Data____________________________" & Environment.NewLine & Environment.NewLine
 
+                DataLogging.SelectionStart = DataLogging.Text.Length
+                DataLogging.ScrollToCaret()
+
                 increase = 1
                 Timer1.Interval = DataNumArduinoS
 
@@ -665,6 +677,10 @@ Public Class Form1
 
                     DataLogging.Text += "  " & increase & ". "
                     DataLogging.Text += DataString & Environment.NewLine
+
+                    DataLogging.SelectionStart = DataLogging.Text.Length
+                    DataLogging.ScrollToCaret()
+
                     increase += 1
 
                     MyPort.WriteLine(DataString)
@@ -680,7 +696,12 @@ Public Class Form1
                         PlayLoading.Visible = False
                         PlaySend.Visible = True
 
+                        DataLogging.Text += Environment.NewLine & Environment.NewLine & "========================================" & Environment.NewLine
                     End If
+
+                    DataLogging.SelectionStart = DataLogging.Text.Length
+                    DataLogging.ScrollToCaret()
+
                 End If
 
             Case DataArrangeS
@@ -702,6 +723,10 @@ Public Class Form1
                     If increase Mod 15 = 0 Then
                         DataLogging.Text += Environment.NewLine & Environment.NewLine
                     End If
+
+                    DataLogging.SelectionStart = DataLogging.Text.Length
+                    DataLogging.ScrollToCaret()
+
                 Else
                     Timer1.Enabled = False
                     PlayLoading.Visible = False
@@ -888,6 +913,9 @@ Public Class Form1
                     If Pallet = 5 And OneBox = 3 Then
                         DataLogging.Text += Environment.NewLine & Environment.NewLine
                     End If
+
+                    DataLogging.SelectionStart = DataLogging.Text.Length
+                    DataLogging.ScrollToCaret()
 
                 Next
             Next
@@ -2083,9 +2111,10 @@ Public Class Form1
                 'data logging layout___________________________________________________________________________________________
                 DataLogButton.Location = New Point(296, 15 + SidePanel.Height + 15 + DataPanel.Height + 15 + 8)
 
+                LabelLogging.Location = New Point(SidePanel.Width + 35, 20)
                 DataLogging.Width = SidePanel.Width - 10
-                DataLogging.Height = 593
-                DataLogging.Location = New Point(SidePanel.Width + 40, 15)
+                DataLogging.Height = 593 - 25 - 15
+                DataLogging.Location = New Point(SidePanel.Width + 40, 15 + 20 + 15)
 
                 Me.Size = New Size(SidePanel.Width + 30, 15 + SidePanel.Height + 15 + DataPanel.Height + 15)
 
@@ -2216,7 +2245,7 @@ Public Class Form1
                 'play panel set up
                 If SlideUI = 11 Then
                     PlayPanel.Height = 90
-                ElseIf slideui = 10 Then
+                ElseIf SlideUI = 10 Then
                     PlayPanel.Height = 215
                 End If
 

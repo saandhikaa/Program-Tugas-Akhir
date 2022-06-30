@@ -67,16 +67,6 @@ My_Controller_Flat_UI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:My_Controller_Flat_UI.My.Resources.Resources.InputMode">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:My_Controller_Flat_UI.My.Resources.Resources.RecordMode">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:My_Controller_Flat_UI.My.Resources.Resources.Refresh">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

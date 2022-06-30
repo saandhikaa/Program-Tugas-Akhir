@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class Form
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -123,6 +123,7 @@ Partial Class Form1
         Me.BunifuDragControl7 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.DataLogging = New System.Windows.Forms.TextBox()
         Me.DataLogButton = New Guna.UI.WinForms.GunaButton()
+        Me.LabelLogging = New System.Windows.Forms.Label()
         Me.SideMenu.SuspendLayout()
         Me.PortPanel.SuspendLayout()
         Me.SidePanel.SuspendLayout()
@@ -1990,12 +1991,24 @@ Partial Class Form1
         Me.DataLogButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.DataLogButton.Visible = False
         '
-        'Form1
+        'LabelLogging
+        '
+        Me.LabelLogging.AutoSize = True
+        Me.LabelLogging.Font = New System.Drawing.Font("Ebrima", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLogging.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.LabelLogging.Location = New System.Drawing.Point(83, 396)
+        Me.LabelLogging.Name = "LabelLogging"
+        Me.LabelLogging.Size = New System.Drawing.Size(87, 25)
+        Me.LabelLogging.TabIndex = 28
+        Me.LabelLogging.Text = "Logging"
+        '
+        'Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1063, 650)
+        Me.Controls.Add(Me.LabelLogging)
         Me.Controls.Add(Me.DataLogButton)
         Me.Controls.Add(Me.DataLogging)
         Me.Controls.Add(Me.RecordGetData)
@@ -2004,7 +2017,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DataPanel)
         Me.Controls.Add(Me.SidePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.SideMenu.ResumeLayout(False)
@@ -2134,4 +2147,5 @@ Partial Class Form1
     Friend WithEvents BunifuDragControl7 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents DataLogging As TextBox
     Friend WithEvents DataLogButton As Guna.UI.WinForms.GunaButton
+    Friend WithEvents LabelLogging As Label
 End Class

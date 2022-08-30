@@ -37,6 +37,9 @@ Partial Class Form
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.SidePanel = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.AboutLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.AboutLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.AboutLabel1 = New System.Windows.Forms.Label()
         Me.SideBack = New Guna.UI.WinForms.GunaButton()
         Me.SideExit = New Guna.UI.WinForms.GunaButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -391,6 +394,9 @@ Partial Class Form
         '
         Me.SidePanel.BackColor = System.Drawing.Color.Transparent
         Me.SidePanel.BaseColor = System.Drawing.Color.DodgerBlue
+        Me.SidePanel.Controls.Add(Me.AboutLabel3)
+        Me.SidePanel.Controls.Add(Me.AboutLabel2)
+        Me.SidePanel.Controls.Add(Me.AboutLabel1)
         Me.SidePanel.Controls.Add(Me.NotifPort)
         Me.SidePanel.Controls.Add(Me.SideBack)
         Me.SidePanel.Controls.Add(Me.SideExit)
@@ -402,6 +408,43 @@ Partial Class Form
         Me.SidePanel.Radius = 7
         Me.SidePanel.Size = New System.Drawing.Size(320, 228)
         Me.SidePanel.TabIndex = 3
+        '
+        'AboutLabel3
+        '
+        Me.AboutLabel3.AutoSize = True
+        Me.AboutLabel3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutLabel3.Font = New System.Drawing.Font("Ebrima", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AboutLabel3.LinkColor = System.Drawing.Color.White
+        Me.AboutLabel3.Location = New System.Drawing.Point(13, 147)
+        Me.AboutLabel3.Name = "AboutLabel3"
+        Me.AboutLabel3.Size = New System.Drawing.Size(23, 17)
+        Me.AboutLabel3.TabIndex = 48
+        Me.AboutLabel3.TabStop = True
+        Me.AboutLabel3.Text = "url"
+        '
+        'AboutLabel2
+        '
+        Me.AboutLabel2.AutoSize = True
+        Me.AboutLabel2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AboutLabel2.Font = New System.Drawing.Font("Ebrima", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AboutLabel2.LinkColor = System.Drawing.Color.White
+        Me.AboutLabel2.Location = New System.Drawing.Point(13, 175)
+        Me.AboutLabel2.Name = "AboutLabel2"
+        Me.AboutLabel2.Size = New System.Drawing.Size(39, 17)
+        Me.AboutLabel2.TabIndex = 47
+        Me.AboutLabel2.TabStop = True
+        Me.AboutLabel2.Text = "email"
+        '
+        'AboutLabel1
+        '
+        Me.AboutLabel1.AutoSize = True
+        Me.AboutLabel1.Font = New System.Drawing.Font("Ebrima", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AboutLabel1.ForeColor = System.Drawing.Color.White
+        Me.AboutLabel1.Location = New System.Drawing.Point(13, 199)
+        Me.AboutLabel1.Name = "AboutLabel1"
+        Me.AboutLabel1.Size = New System.Drawing.Size(29, 17)
+        Me.AboutLabel1.TabIndex = 44
+        Me.AboutLabel1.Text = "text"
         '
         'SideBack
         '
@@ -2148,4 +2191,7 @@ Partial Class Form
     Friend WithEvents DataLogging As TextBox
     Friend WithEvents DataLogButton As Guna.UI.WinForms.GunaButton
     Friend WithEvents LabelLogging As Label
+    Friend WithEvents AboutLabel1 As Label
+    Friend WithEvents AboutLabel3 As LinkLabel
+    Friend WithEvents AboutLabel2 As LinkLabel
 End Class

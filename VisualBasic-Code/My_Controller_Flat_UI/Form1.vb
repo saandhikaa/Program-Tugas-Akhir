@@ -2,6 +2,7 @@
 Imports System.IO.Ports
 
 Public Class Form
+    Dim Aboutstatus As Boolean = False
     Dim Port As String = " "                                'nama port
     Dim ConnectedString As String
     Dim DataString As String                                'tampilan text pada tombol data1 - data10               
@@ -62,7 +63,10 @@ Public Class Form
     Private Sub SideBack_Click(sender As Object, e As EventArgs) Handles SideBack.Click
         If SideConnect.Text = "Disconnect" Then
             ScreenLayout("Main")
+        ElseIf Aboutstatus = True Then
+            ScreenLayout("Home")
         End If
+
     End Sub
 
     Private Sub SideExit_Click(sender As Object, e As EventArgs) Handles SideExit.Click
@@ -1977,6 +1981,31 @@ Public Class Form
         Action10.BorderSize = 0
     End Sub
 
+
+    Private Sub AboutLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles AboutLabel2.LinkClicked
+        System.Diagnostics.Process.Start("mailto:sssandhika@gmail.com?subject=Robotic-arm-controller%20RAC%20V1.0")
+    End Sub
+
+    Private Sub AboutLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles AboutLabel3.LinkClicked
+        System.Diagnostics.Process.Start("https://saandhikaa.github.io/repositories/research-01.html")
+    End Sub
+
+    Private Sub AboutLabel2_MouseHover(sender As Object, e As EventArgs) Handles AboutLabel2.MouseHover
+        AboutLabel2.LinkColor = Color.Purple
+    End Sub
+
+    Private Sub AboutLabel2_MouseLeave(sender As Object, e As EventArgs) Handles AboutLabel2.MouseLeave
+        AboutLabel2.LinkColor = Color.White
+    End Sub
+
+    Private Sub AboutLabel3_MouseHover(sender As Object, e As EventArgs) Handles AboutLabel3.MouseHover
+        AboutLabel3.LinkColor = Color.Purple
+    End Sub
+
+    Private Sub AboutLabel3_MouseLeave(sender As Object, e As EventArgs) Handles AboutLabel3.MouseLeave
+        AboutLabel3.LinkColor = Color.White
+    End Sub
+
     Public Function SIN(ByVal InValue As Double)
         Dim value As Double
         value = Math.Sin(InValue * (Math.PI / 180))
@@ -2024,6 +2053,12 @@ Public Class Form
                 PlaySend.Visible = False
                 SideMenu.Visible = False
                 SideAbout.Visible = True
+
+                AboutLabel1.Visible = False
+                AboutLabel2.Visible = False
+                AboutLabel3.Visible = False
+
+                Aboutstatus = False
 
                 'back to Main__________________________________________________________________________________________________
                 If SideConnect.Text = "Disconnect" Then
@@ -2297,12 +2332,33 @@ Public Class Form
                 SidePlay.BaseColor = Color.DodgerBlue
                 SidePlay.ForeColor = Color.White
 
+                PortPanel.Visible = False
+                SideConnect.Visible = False
+                NotifPort.Visible = False
+                SideAbout.Visible = False
+
+                SideBack.Visible = True
+
+                AboutLabel1.Visible = True
+                AboutLabel2.Visible = True
+                AboutLabel3.Visible = True
+
                 InputPanel.Visible = False
                 PlayPanel.Visible = False
                 DataPanel.Visible = False
 
                 Me.Size = New Size(15 + SidePanel.Width + 15, 15 + SidePanel.Height + 15)
+
+                Aboutstatus = True
+
+                AboutLabel1.Location = New Point(20, 50)
+                AboutLabel1.Text = "Robotic Arm Controller - RAC 1.0" & Environment.NewLine & Environment.NewLine & "(C) 2021 - 2022 saandhika.github.io" & Environment.NewLine & Environment.NewLine & "Untuk informasi lebih lanjut, silakan hubungi:" & Environment.NewLine & Environment.NewLine & Environment.NewLine & "atau kunjungi:"
+
+                AboutLabel2.Location = New Point(20, 138)
+                AboutLabel2.Text = "sssandhika@gmail.com"
+
+                AboutLabel3.Location = New Point(20, 188)
+                AboutLabel3.Text = "https://saandhikaa.github.io/repositories/" & Environment.NewLine & "research-01.html"
         End Select
     End Sub
-
 End Class

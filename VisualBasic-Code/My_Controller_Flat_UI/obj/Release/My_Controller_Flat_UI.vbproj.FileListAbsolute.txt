@@ -21,3 +21,17 @@ C:\Users\SANDHIKA\OneDrive\Documents\Visual Studio Project\My_Controller_Flat_UI
 C:\Users\SANDHIKA\OneDrive\Documents\Visual Studio Project\My_Controller_Flat_UI\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.exe
 C:\Users\SANDHIKA\OneDrive\Documents\Visual Studio Project\My_Controller_Flat_UI\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.xml
 C:\Users\SANDHIKA\OneDrive\Documents\Visual Studio Project\My_Controller_Flat_UI\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.pdb
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Release\My_Controller_Flat_UI.exe.config
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Release\My_Controller_Flat_UI.exe
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Release\My_Controller_Flat_UI.pdb
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Release\My_Controller_Flat_UI.xml
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.vbprojAssemblyReference.cache
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.exe.config
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.Form.resources
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.Resources.resources
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.vbproj.GenerateResource.cache
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.vbproj.CoreCompileInputs.cache
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.vbproj.CopyComplete
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.exe
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.xml
+C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Release\My_Controller_Flat_UI.pdb

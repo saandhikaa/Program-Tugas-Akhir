@@ -109,10 +109,6 @@ C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Cod
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\My_Controller_Flat_UI.exe
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\My_Controller_Flat_UI.pdb
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\My_Controller_Flat_UI.xml
-C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
-C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
-C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
-C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\bin\Debug\Bunifu_UI_v1.5.3.xml
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Debug\My_Controller_Flat_UI.Resources.resources
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Debug\My_Controller_Flat_UI.vbproj.CoreCompileInputs.cache
 C:\Users\SANDHIKA\OneDrive\My Documents\_Tugas Akhir_\Repository\VisualBasic-Code\My_Controller_Flat_UI\obj\Debug\My_Controller_Flat_UI.vbproj.CopyComplete
